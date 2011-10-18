@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>cslcsv: クラス csl::csv::Util</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- 作成： Doxygen 1.7.4 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">cslcsv&#160;<span id="projectnumber">1.0.0</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="classes.html"><span>構成索引</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>csl</b>      </li>
+      <li class="navelem"><b>csv</b>      </li>
+      <li class="navelem"><a class="el" href="classcsl_1_1csv_1_1_util.html">Util</a>      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Static Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">クラス csl::csv::Util</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="csl::csv::Util" -->
+<p>CSV形式ファイルの入出力ユーティリティーを提供します。  
+ <a href="classcsl_1_1csv_1_1_util.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_util_8hpp_source.html">Util.hpp</a>&gt;</code></p>
+
+<p><a href="classcsl_1_1csv_1_1_util-members.html">すべてのメンバ一覧</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#a80d851111b0c798ebf7a191ed37d32d0">load</a> (std::istream &amp;stream, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">デフォルトのConfigオブジェクトの設定に従って、指定された入力ストリームからCSVデータを読み込んで返します。  <a href="#a80d851111b0c798ebf7a191ed37d32d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#aaa46a7a4ad95add9ac36ab342b1fa737">load</a> (std::istream &amp;stream, const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたConfigオブジェクトの設定に従って、指定された入力ストリームからCSVデータを読み込んで返します。  <a href="#aaa46a7a4ad95add9ac36ab342b1fa737"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#a8e9fa621344816571a37b0ab2601fee7">load</a> (const std::string &amp;filepath, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">デフォルトのConfigオブジェクトの設定に従って、指定されたファイルからCSVデータを読み込んで返します。  <a href="#a8e9fa621344816571a37b0ab2601fee7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#ac72b201a93fd02d6cb8ce0b51fb7f5f8">load</a> (const std::string &amp;filepath, const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたConfigオブジェクトの設定に従って、指定されたファイルからCSVデータを読み込んで返します。  <a href="#ac72b201a93fd02d6cb8ce0b51fb7f5f8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#af49d1a2c11210b162ffeb7ae4642a020">save</a> (std::ostream &amp;stream, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">デフォルトのConfigオブジェクトの設定に従って、指定された出力ストリームにCSVデータを書き込みます。  <a href="#af49d1a2c11210b162ffeb7ae4642a020"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#a2e1cfde124f5c7ca4fcec8e5d1805bcc">save</a> (std::ostream &amp;stream, const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたConfigオブジェクトの設定に従って、指定された出力ストリームにCSVデータを書き込みます。  <a href="#a2e1cfde124f5c7ca4fcec8e5d1805bcc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#abb39b5a56b39401edea2739539b5935e">save</a> (const std::string &amp;filepath, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">デフォルトのConfigオブジェクトの設定に従って、指定されたファイルにCSVデータを書き込みます。  <a href="#abb39b5a56b39401edea2739539b5935e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_util.html#acf9653c9a592809b247a06ef2bd4a593">save</a> (const std::string &amp;filepath, const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定されたConfigオブジェクトの設定に従って、指定されたファイルにCSVデータを書き込みます。  <a href="#acf9653c9a592809b247a06ef2bd4a593"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>CSV形式ファイルの入出力ユーティリティーを提供します。 </p>
+</div><hr/><h2>関数</h2>
+<a class="anchor" id="a80d851111b0c798ebf7a191ed37d32d0"></a><!-- doxytag: member="csl::csv::Util::load" ref="a80d851111b0c798ebf7a191ed37d32d0" args="(std::istream &amp;stream, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::load </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デフォルトのConfigオブジェクトの設定に従って、指定された入力ストリームからCSVデータを読み込んで返します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>入力ストリーム </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>入力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa46a7a4ad95add9ac36ab342b1fa737"></a><!-- doxytag: member="csl::csv::Util::load" ref="aaa46a7a4ad95add9ac36ab342b1fa737" args="(std::istream &amp;stream, const Config &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::load </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたConfigオブジェクトの設定に従って、指定された入力ストリームからCSVデータを読み込んで返します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>入力ストリーム </td></tr>
+    <tr><td class="paramname">config</td><td>Configオブジェクト </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>入力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac72b201a93fd02d6cb8ce0b51fb7f5f8"></a><!-- doxytag: member="csl::csv::Util::load" ref="ac72b201a93fd02d6cb8ce0b51fb7f5f8" args="(const std::string &amp;filepath, const Config &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filepath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたConfigオブジェクトの設定に従って、指定されたファイルからCSVデータを読み込んで返します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>ファイルパス </td></tr>
+    <tr><td class="paramname">config</td><td>Configオブジェクト </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>入力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e9fa621344816571a37b0ab2601fee7"></a><!-- doxytag: member="csl::csv::Util::load" ref="a8e9fa621344816571a37b0ab2601fee7" args="(const std::string &amp;filepath, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filepath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デフォルトのConfigオブジェクトの設定に従って、指定されたファイルからCSVデータを読み込んで返します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>ファイルパス </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>入力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af49d1a2c11210b162ffeb7ae4642a020"></a><!-- doxytag: member="csl::csv::Util::save" ref="af49d1a2c11210b162ffeb7ae4642a020" args="(std::ostream &amp;stream, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::save </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デフォルトのConfigオブジェクトの設定に従って、指定された出力ストリームにCSVデータを書き込みます。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>出力ストリーム </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>出力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acf9653c9a592809b247a06ef2bd4a593"></a><!-- doxytag: member="csl::csv::Util::save" ref="acf9653c9a592809b247a06ef2bd4a593" args="(const std::string &amp;filepath, const Config &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::save </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filepath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたConfigオブジェクトの設定に従って、指定されたファイルにCSVデータを書き込みます。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>ファイルパス </td></tr>
+    <tr><td class="paramname">config</td><td>Configオブジェクト </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>出力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2e1cfde124f5c7ca4fcec8e5d1805bcc"></a><!-- doxytag: member="csl::csv::Util::save" ref="a2e1cfde124f5c7ca4fcec8e5d1805bcc" args="(std::ostream &amp;stream, const Config &amp;config, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::save </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>stream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定されたConfigオブジェクトの設定に従って、指定された出力ストリームにCSVデータを書き込みます。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>出力ストリーム </td></tr>
+    <tr><td class="paramname">config</td><td>Configオブジェクト </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>出力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="abb39b5a56b39401edea2739539b5935e"></a><!-- doxytag: member="csl::csv::Util::save" ref="abb39b5a56b39401edea2739539b5935e" args="(const std::string &amp;filepath, std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;csv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Util::save </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filepath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>csv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>デフォルトのConfigオブジェクトの設定に従って、指定されたファイルにCSVデータを書き込みます。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>ファイルパス </td></tr>
+    <tr><td class="paramname">csv</td><td>CSVデータ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::ios_base::failure</td><td>出力ストリームにエラーが発生した場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>このクラスの説明は次のファイルから生成されました:<ul>
+<li>include/csl/csv/<a class="el" href="_util_8hpp_source.html">Util.hpp</a></li>
+<li>src/<a class="el" href="_util_8cpp.html">Util.cpp</a></li>
+</ul>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>cslcsvに対してTue Oct 18 2011 21:14:59に生成されました。&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>

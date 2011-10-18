@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>cslcsv: クラス csl::csv::Config</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- 作成： Doxygen 1.7.4 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">cslcsv&#160;<span id="projectnumber">1.0.0</span></div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>メインページ</span></a></li>
+      <li class="current"><a href="annotated.html"><span>クラス</span></a></li>
+      <li><a href="files.html"><span>ファイル</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>構成</span></a></li>
+      <li><a href="classes.html"><span>構成索引</span></a></li>
+      <li><a href="functions.html"><span>構成メンバ</span></a></li>
+    </ul>
+  </div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><b>csl</b>      </li>
+      <li class="navelem"><b>csv</b>      </li>
+      <li class="navelem"><a class="el" href="classcsl_1_1csv_1_1_config.html">Config</a>      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public メソッド</a>  </div>
+  <div class="headertitle">
+<div class="title">クラス csl::csv::Config</div>  </div>
+</div>
+<div class="contents">
+<!-- doxytag: class="csl::csv::Config" -->
+<p>区切り文字、囲み文字、コメント文字などのCSV形式に関する設定の情報を管理します。  
+ <a href="classcsl_1_1csv_1_1_config.html#details">[詳細]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_config_8hpp_source.html">Config.hpp</a>&gt;</code></p>
+
+<p><a href="classcsl_1_1csv_1_1_config-members.html">すべてのメンバ一覧</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaacab3d7ec4d9e7711e06466bb0e1a01"></a><!-- doxytag: member="csl::csv::Config::Config" ref="aaacab3d7ec4d9e7711e06466bb0e1a01" args="(void)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#aaacab3d7ec4d9e7711e06466bb0e1a01">Config</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">デフォルトのConfigオブジェクトを構築します。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#aad3e183071db652d650d6f4aa62942d1">Config</a> (const char delimitMark)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定された区切り文字を設定したConfigオブジェクトを構築します。  <a href="#aad3e183071db652d650d6f4aa62942d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#aa591cd3c73a75dffaacaf79beb94e243">Config</a> (const char delimitMark, const bool quoteEnabled, const char quoteMark)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定された区切り文字、および、指定された囲み文字を有効にするかどうかと指定された囲み文字を設定したConfigオブジェクトを構築します。  <a href="#aa591cd3c73a75dffaacaf79beb94e243"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#a89e854abc756d8c66294d9f8b58403dc">Config</a> (const char delimitMark, const bool quoteEnabled, const char quoteMark, const bool commentEnabled, const char commentMark)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">指定された区切り文字、および、指定された囲み文字を有効にするかどうかと指定された囲み文字、および、指定されたコメント文字を有効にするかどうかと指定されたコメント文字を設定したConfigオブジェクトを構築します。  <a href="#a89e854abc756d8c66294d9f8b58403dc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dd365de754a9253ba4928c6f0fb45c1"></a><!-- doxytag: member="csl::csv::Config::~Config" ref="a3dd365de754a9253ba4928c6f0fb45c1" args="(void)" -->
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#a3dd365de754a9253ba4928c6f0fb45c1">~Config</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Configオブジェクトを破棄します。 <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#a40b8e23c7e7180a6e281ea0ab2c0e1e3">getDelimitMark</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">区切り文字を返します。  <a href="#a40b8e23c7e7180a6e281ea0ab2c0e1e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#afbadf37becdb06bf8670dbc7bf3a978f">setDelimitMark</a> (const char delimiter)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">区切り文字を設定します。  <a href="#afbadf37becdb06bf8670dbc7bf3a978f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#ae062e12e9bffbc3c717f5712b926a5c8">getQuoteEnabled</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">囲み文字が有効かをどうか返します。  <a href="#ae062e12e9bffbc3c717f5712b926a5c8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#ae39d734ecc3ede1197471601f94c74ab">setQuoteEnabled</a> (const bool quoteEnabled)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">囲み文字が有効かをどうか設定します。  <a href="#ae39d734ecc3ede1197471601f94c74ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#a59fcb5ff66946ce3165f6804245a2017">getQuoteMark</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">囲み文字を返します。  <a href="#a59fcb5ff66946ce3165f6804245a2017"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#af4c655c3fc6b7e2fda88d92e6e66890f">setQuoteMark</a> (const char quoteMark)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">囲み文字を設定します。  <a href="#af4c655c3fc6b7e2fda88d92e6e66890f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#aa86aa16a807a21a681a3ca0d9cf1c94a">getCommentEnabled</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">コメント文字が有効かどうかを返します。  <a href="#aa86aa16a807a21a681a3ca0d9cf1c94a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#a5f9039c0ed352ca84dae2f01023d6b56">setCommentEnabled</a> (const bool commentEnabled)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">コメント文字が有効かどうかを設定します。  <a href="#a5f9039c0ed352ca84dae2f01023d6b56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#a6f6e29098c816bac1b523bd445da6034">getCommentMark</a> (void) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">コメント文字を返します。  <a href="#a6f6e29098c816bac1b523bd445da6034"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcsl_1_1csv_1_1_config.html#a1eb96829da53f117b763c530c4826640">setCommentMark</a> (const char commentMark)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">コメント文字を設定します。  <a href="#a1eb96829da53f117b763c530c4826640"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>説明</h2>
+<div class="textblock"><p>区切り文字、囲み文字、コメント文字などのCSV形式に関する設定の情報を管理します。 </p>
+</div><hr/><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" id="aad3e183071db652d650d6f4aa62942d1"></a><!-- doxytag: member="csl::csv::Config::Config" ref="aad3e183071db652d650d6f4aa62942d1" args="(const char delimitMark)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">csl::csv::Config::Config </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>delimitMark</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定された区切り文字を設定したConfigオブジェクトを構築します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delimitMark</td><td>区切り文字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>指定された区切り文字が、デフォルトの囲み文字、デフォルトのコメント文字、改行コードと同一文字の場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa591cd3c73a75dffaacaf79beb94e243"></a><!-- doxytag: member="csl::csv::Config::Config" ref="aa591cd3c73a75dffaacaf79beb94e243" args="(const char delimitMark, const bool quoteEnabled, const char quoteMark)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">csl::csv::Config::Config </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>delimitMark</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>quoteEnabled</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>quoteMark</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定された区切り文字、および、指定された囲み文字を有効にするかどうかと指定された囲み文字を設定したConfigオブジェクトを構築します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delimitMark</td><td>区切り文字 </td></tr>
+    <tr><td class="paramname">quoteEnabled</td><td>囲み文字を有効にするかどうか </td></tr>
+    <tr><td class="paramname">quoteMark</td><td>囲み文字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>指定された区切り文字が、指定された囲み文字、デフォルトのコメント文字、改行コードと同一文字の場合、または、指定された囲み文字が、指定された区切り文字、デフォルトのコメント文字、改行コードと同一文字の場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a89e854abc756d8c66294d9f8b58403dc"></a><!-- doxytag: member="csl::csv::Config::Config" ref="a89e854abc756d8c66294d9f8b58403dc" args="(const char delimitMark, const bool quoteEnabled, const char quoteMark, const bool commentEnabled, const char commentMark)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">csl::csv::Config::Config </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>delimitMark</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>quoteEnabled</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>quoteMark</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>commentEnabled</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>commentMark</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>指定された区切り文字、および、指定された囲み文字を有効にするかどうかと指定された囲み文字、および、指定されたコメント文字を有効にするかどうかと指定されたコメント文字を設定したConfigオブジェクトを構築します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delimitMark</td><td>区切り文字 </td></tr>
+    <tr><td class="paramname">quoteEnabled</td><td>囲み文字を有効にするかどうか </td></tr>
+    <tr><td class="paramname">quoteMark</td><td>囲み文字 </td></tr>
+    <tr><td class="paramname">commentEnabled</td><td>コメント文字を有効にするかどうか </td></tr>
+    <tr><td class="paramname">commentMark</td><td>コメント文字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>指定された区切り文字が、指定された囲み文字、指定されたコメント文字、改行コードと同一文字の場合、または、指定された囲み文字が、指定された区切り文字、指定されたコメント文字、改行コードと同一文字の場合、または、指定されたコメント文字が、指定された区切り文字、指定された囲み文字、改行コードと同一文字の場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>関数</h2>
+<a class="anchor" id="aa86aa16a807a21a681a3ca0d9cf1c94a"></a><!-- doxytag: member="csl::csv::Config::getCommentEnabled" ref="aa86aa16a807a21a681a3ca0d9cf1c94a" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool csl::csv::Config::getCommentEnabled </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コメント文字が有効かどうかを返します。 </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コメント文字が有効かどうか </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6f6e29098c816bac1b523bd445da6034"></a><!-- doxytag: member="csl::csv::Config::getCommentMark" ref="a6f6e29098c816bac1b523bd445da6034" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char csl::csv::Config::getCommentMark </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コメント文字を返します。 </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>コメント文字 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a40b8e23c7e7180a6e281ea0ab2c0e1e3"></a><!-- doxytag: member="csl::csv::Config::getDelimitMark" ref="a40b8e23c7e7180a6e281ea0ab2c0e1e3" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char csl::csv::Config::getDelimitMark </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>区切り文字を返します。 </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>区切り文字 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae062e12e9bffbc3c717f5712b926a5c8"></a><!-- doxytag: member="csl::csv::Config::getQuoteEnabled" ref="ae062e12e9bffbc3c717f5712b926a5c8" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool csl::csv::Config::getQuoteEnabled </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>囲み文字が有効かをどうか返します。 </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>囲み文字が有効かどうか </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a59fcb5ff66946ce3165f6804245a2017"></a><!-- doxytag: member="csl::csv::Config::getQuoteMark" ref="a59fcb5ff66946ce3165f6804245a2017" args="(void) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char csl::csv::Config::getQuoteMark </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>囲み文字を返します。 </p>
+<dl class="return"><dt><b>戻り値:</b></dt><dd>囲み文字 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5f9039c0ed352ca84dae2f01023d6b56"></a><!-- doxytag: member="csl::csv::Config::setCommentEnabled" ref="a5f9039c0ed352ca84dae2f01023d6b56" args="(const bool commentEnabled)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Config::setCommentEnabled </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>commentEnabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コメント文字が有効かどうかを設定します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commentEnabled</td><td>コメント文字が有効かどうか </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1eb96829da53f117b763c530c4826640"></a><!-- doxytag: member="csl::csv::Config::setCommentMark" ref="a1eb96829da53f117b763c530c4826640" args="(const char commentMark)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Config::setCommentMark </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>commentMark</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>コメント文字を設定します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commentMark</td><td>コメント文字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>指定されたコメント文字が、設定された区切り文字、設定された囲み文字、改行コードと同一文字の場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="afbadf37becdb06bf8670dbc7bf3a978f"></a><!-- doxytag: member="csl::csv::Config::setDelimitMark" ref="afbadf37becdb06bf8670dbc7bf3a978f" args="(const char delimiter)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Config::setDelimitMark </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>delimitMark</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>区切り文字を設定します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delimitMark</td><td>区切り文字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>指定された区切り文字が、設定された囲み文字、設定されたコメント文字、改行コードと同一文字の場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae39d734ecc3ede1197471601f94c74ab"></a><!-- doxytag: member="csl::csv::Config::setQuoteEnabled" ref="ae39d734ecc3ede1197471601f94c74ab" args="(const bool quoteEnabled)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Config::setQuoteEnabled </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>quoteEnabled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>囲み文字が有効かをどうか設定します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quoteEnabled</td><td>囲み文字が有効かどうか </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af4c655c3fc6b7e2fda88d92e6e66890f"></a><!-- doxytag: member="csl::csv::Config::setQuoteMark" ref="af4c655c3fc6b7e2fda88d92e6e66890f" args="(const char quoteMark)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void csl::csv::Config::setQuoteMark </td>
+          <td>(</td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>quoteMark</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>囲み文字を設定します。 </p>
+<dl><dt><b>引数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quoteMark</td><td>囲み文字 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>例外:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>指定された囲み文字が、設定された区切り文字、設定されたコメント文字、改行コードと同一文字の場合 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>このクラスの説明は次のファイルから生成されました:<ul>
+<li>include/csl/csv/<a class="el" href="_config_8hpp_source.html">Config.hpp</a></li>
+<li>src/<a class="el" href="_config_8cpp.html">Config.cpp</a></li>
+</ul>
+</div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全て</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>クラス</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>ファイル</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>関数</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>cslcsvに対してTue Oct 18 2011 21:14:59に生成されました。&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </small></address>
+</body>
+</html>
