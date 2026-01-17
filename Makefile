@@ -1,5 +1,5 @@
 CXX       = g++
-CXXFLAGS  = -O2 -Wall
+CXXFLAGS  = -O2 -Wall -fPIC
 AR        = ar
 ARFLAGS   = rv
 RANLIB    = ranlib
@@ -51,7 +51,7 @@ clean:
 	rm -f $(LIBDIR)/* $(BINDIR)/* $(OBJDIR)/*
 
 test: $(patsubst %, $(OBJDIR)/%, $(TESTOBJS)) $(LIBDIR)/libcslcsv.a
-	$(CXX) $(CXXFLAGS) $(TESTFLAGS) -I$(INCDIR) $^ -o $(BINDIR)/$@
+	$(CXX) $(CXXFLAGS) -I$(INCDIR) $^ $(TESTFLAGS) -o $(BINDIR)/$@
 	./$(BINDIR)/$@
 	rm -f ./$(BINDIR)/$@
 
