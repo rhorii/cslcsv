@@ -70,7 +70,18 @@ void Util::load(const std::string& filepath,
 {
   std::ifstream stream(filepath.c_str(), std::ifstream::binary);
 
-  load(stream, config, csv);
+  if (!stream.is_open()) {
+    throw std::ios_base::failure("Failed to open file for reading: " + filepath);
+  }
+
+  try {
+    load(stream, config, csv);
+  } catch (...) {
+    stream.close();
+    throw;
+  }
+
+  stream.close();
 }
 
 /**
@@ -129,7 +140,18 @@ void Util::save(const std::string& filepath,
 {
   std::ofstream stream(filepath.c_str(), std::ofstream::binary);
 
-  save(stream, config, csv);
+  if (!stream.is_open()) {
+    throw std::ios_base::failure("Failed to open file for writing: " + filepath);
+  }
+
+  try {
+    save(stream, config, csv);
+  } catch (...) {
+    stream.close();
+    throw;
+  }
+
+  stream.close();
 }
 
 } // namespace csv
