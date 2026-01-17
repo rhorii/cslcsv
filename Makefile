@@ -26,6 +26,7 @@ TESTSRCS  = Test.cpp \
 TESTOBJS  = $(TESTSRCS:.cpp=.o)
 
 .PHONY: all \
+        init \
         libcslcsv.a \
         libcslcsv.so \
         clean \
@@ -34,7 +35,10 @@ TESTOBJS  = $(TESTSRCS:.cpp=.o)
         $(LIBDIR)/libcslcsv.so \
         $(OBJDIR)/%.o
 
-all: libcslcsv.a libcslcsv.so
+all: init libcslcsv.a libcslcsv.so
+
+init:
+	mkdir -p $(LIBDIR) $(BINDIR) $(OBJDIR)
 
 libcslcsv.a: $(patsubst %, $(OBJDIR)/%, $(OBJS))
 	$(AR) $(ARFLAGS) $(LIBDIR)/$@ $^
