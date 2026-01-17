@@ -195,5 +195,10 @@ void Config::validate(void) const
   }
 }
 
+/**
+ * @brief デフォルトのConfigオブジェクトの定義
+ */
+const Config DEFAULT_CONFIG;
+
 } // namespace csv
 } // namespace csl

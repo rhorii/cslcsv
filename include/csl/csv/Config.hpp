@@ -55,32 +55,32 @@ private:
 /**
  * @brief デフォルトのConfigオブジェクトです。
  */
-static const Config DEFAULT_CONFIG;
+extern const Config DEFAULT_CONFIG;
 
 /**
  * @brief デフォルトの区切り文字です。
  */
-static const char DEFAULT_DELIMIT_MARK = ',';
+constexpr char DEFAULT_DELIMIT_MARK = ',';
 
 /**
  * @brief デフォルトの囲み文字を有効にするかどうかです。
  */
-static const bool DEFAULT_QUOTE_ENABLED = true;
+constexpr bool DEFAULT_QUOTE_ENABLED = true;
 
 /**
  * @brief デフォルトの囲み文字です。
  */
-static const char DEFAULT_QUOTE_MARK = '"';
+constexpr char DEFAULT_QUOTE_MARK = '"';
 
 /**
  * @brief デフォルトのコメント文字を有効にするかどうかです。
  */
-static const bool DEFAULT_COMMENT_ENABLED = false;
+constexpr bool DEFAULT_COMMENT_ENABLED = false;
 
 /**
  * @brief デフォルトのコメント文字です。
  */
-static const char DEFAULT_COMMENT_MARK = '#';
+constexpr char DEFAULT_COMMENT_MARK = '#';
 
 } // namespace csv
 } // namespace csl
