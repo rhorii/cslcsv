@@ -26,7 +26,7 @@ public:
   ~Writer(void);
   
 public:
-  void write(std::vector<std::string>& record);
+  void write(const std::vector<std::string>& record);
 
 private:
   std::ostream& stream;

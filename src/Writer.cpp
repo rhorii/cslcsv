@@ -40,7 +40,7 @@ Writer::~Writer(void)
  * @param record CSVレコード
  * @exception std::ios_base::failure 出力ストリームにエラーが発生した場合
  */
-void Writer::write(std::vector<std::string>& record)
+void Writer::write(const std::vector<std::string>& record)
 {
   for (int i = 0; i < (int)record.size(); i++) {
     if (i > 0) {

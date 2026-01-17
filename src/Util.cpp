@@ -91,7 +91,7 @@ void Util::load(const std::string& filepath,
  * @exception std::ios_base::failure 出力ストリームにエラーが発生した場合
  */
 void Util::save(std::ostream& stream,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   save(stream, DEFAULT_CONFIG, csv);
 }
@@ -105,11 +105,11 @@ void Util::save(std::ostream& stream,
  */
 void Util::save(std::ostream& stream,
 		const Config& config,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   Writer writer(stream, config);
 
-  typedef std::vector<std::vector<std::string> >::iterator iterator;
+  typedef std::vector<std::vector<std::string> >::const_iterator iterator;
   for (iterator i = csv.begin(); i != csv.end(); i++) {
     writer.write(*i);
   }
@@ -122,7 +122,7 @@ void Util::save(std::ostream& stream,
  * @exception std::ios_base::failure 出力ストリームにエラーが発生した場合
  */
 void Util::save(const std::string& filepath,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   save(filepath, DEFAULT_CONFIG, csv);
 }
@@ -136,7 +136,7 @@ void Util::save(const std::string& filepath,
  */
 void Util::save(const std::string& filepath,
 		const Config& config,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   std::ofstream stream(filepath.c_str(), std::ofstream::binary);
 

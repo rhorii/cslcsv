@@ -32,15 +32,15 @@ public:
 		   std::vector<std::vector<std::string> >& csv);
 
   static void save(std::ostream& stream,
-		   std::vector<std::vector<std::string> >& csv);
+		   const std::vector<std::vector<std::string> >& csv);
   static void save(std::ostream& stream,
 		   const Config& config,
-		   std::vector<std::vector<std::string> >& csv);
+		   const std::vector<std::vector<std::string> >& csv);
   static void save(const std::string& filepath,
-		   std::vector<std::vector<std::string> >& csv);
+		   const std::vector<std::vector<std::string> >& csv);
   static void save(const std::string& filepath,
 		   const Config& config,
-		   std::vector<std::vector<std::string> >& csv);
+		   const std::vector<std::vector<std::string> >& csv);
   
 private:
   Util(void);
