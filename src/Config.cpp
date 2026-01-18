@@ -17,6 +17,9 @@ Config::Config(void)
   , quoteMark(DEFAULT_QUOTE_MARK)
   , commentEnabled(DEFAULT_COMMENT_ENABLED)
   , commentMark(DEFAULT_COMMENT_MARK)
+  , maxFieldSize(0)
+  , maxRecordSize(0)
+  , maxRecords(0)
 {
 }
 
@@ -31,6 +34,9 @@ Config::Config(const char delimitMark)
   , quoteMark(DEFAULT_QUOTE_MARK)
   , commentEnabled(DEFAULT_COMMENT_ENABLED)
   , commentMark(DEFAULT_COMMENT_MARK)
+  , maxFieldSize(0)
+  , maxRecordSize(0)
+  , maxRecords(0)
 {
   validate();
 }
@@ -48,6 +54,9 @@ Config::Config(const char delimitMark, const bool quoteEnabled, const char quote
   , quoteMark(quoteMark)
   , commentEnabled(DEFAULT_COMMENT_ENABLED)
   , commentMark(DEFAULT_COMMENT_MARK)
+  , maxFieldSize(0)
+  , maxRecordSize(0)
+  , maxRecords(0)
 {
   validate();
 }
@@ -69,6 +78,9 @@ Config::Config(const char delimitMark,
   , quoteMark(quoteMark)
   , commentEnabled(commentEnabled)
   , commentMark(commentMark)
+  , maxFieldSize(0)
+  , maxRecordSize(0)
+  , maxRecords(0)
 {
   validate();
 }
@@ -174,6 +186,60 @@ void Config::setCommentMark(const char commentMark)
 {
   this->commentMark = commentMark;
   validate();
+}
+
+/**
+ * @brief 最大フィールドサイズを取得します。
+ * @return 最大フィールドサイズ (0 = 無制限)
+ */
+size_t Config::getMaxFieldSize(void) const
+{
+  return maxFieldSize;
+}
+
+/**
+ * @brief 最大フィールドサイズを設定します。
+ * @param size 最大フィールドサイズ (0 = 無制限)
+ */
+void Config::setMaxFieldSize(size_t size)
+{
+  maxFieldSize = size;
+}
+
+/**
+ * @brief 最大レコードサイズを取得します。
+ * @return 最大レコードサイズ (0 = 無制限)
+ */
+size_t Config::getMaxRecordSize(void) const
+{
+  return maxRecordSize;
+}
+
+/**
+ * @brief 最大レコードサイズを設定します。
+ * @param size 最大レコードサイズ (0 = 無制限)
+ */
+void Config::setMaxRecordSize(size_t size)
+{
+  maxRecordSize = size;
+}
+
+/**
+ * @brief 最大レコード数を取得します。
+ * @return 最大レコード数 (0 = 無制限)
+ */
+size_t Config::getMaxRecords(void) const
+{
+  return maxRecords;
+}
+
+/**
+ * @brief 最大レコード数を設定します。
+ * @param count 最大レコード数 (0 = 無制限)
+ */
+void Config::setMaxRecords(size_t count)
+{
+  maxRecords = count;
 }
 
 /**
