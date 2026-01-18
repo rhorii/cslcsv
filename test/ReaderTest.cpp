@@ -4,6 +4,7 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
+#include <stdexcept>
 #include "csl/csv/Config.hpp"
 
 namespace csl {
@@ -18,6 +19,7 @@ class ReaderTest : public CPPUNIT_NS::TestFixture
   CPPUNIT_TEST(testReadQuoteDisabled);
   CPPUNIT_TEST(testReadCommentEnabled);
   CPPUNIT_TEST(testReadCommentDisabled);
+  CPPUNIT_TEST(testReadUnmatchedQuote);
   CPPUNIT_TEST(testReadThrowFailure);
   CPPUNIT_TEST_SUITE_END();
 
@@ -33,6 +35,7 @@ private:
   void testReadQuoteDisabled(void);
   void testReadCommentEnabled(void);
   void testReadCommentDisabled(void);
+  void testReadUnmatchedQuote(void);
   void testReadThrowFailure(void);
 };
 
@@ -223,6 +226,22 @@ void ReaderTest::testReadCommentDisabled(void)
   CPPUNIT_ASSERT(record[0] == "#comment line3");
 
   CPPUNIT_ASSERT_EQUAL(false, reader.hasNext());
+}
+
+void ReaderTest::testReadUnmatchedQuote(void)
+{
+  std::stringstream stream("\"aaa,bbb\r\n");  // 終了引用符なし
+  Reader reader(stream);
+  std::vector<std::string> record;
+
+  try {
+    reader.read(record);
+    CPPUNIT_FAIL("std::runtime_error must be throw.");
+  } catch (std::runtime_error& e) {
+    // 期待される例外
+    std::string msg = e.what();
+    CPPUNIT_ASSERT(msg.find("Unmatched quote") != std::string::npos);
+  }
 }
 
 void ReaderTest::testReadThrowFailure(void)
