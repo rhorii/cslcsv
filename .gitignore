@@ -26,3 +26,6 @@ test/*.csv
 # OS files
 .DS_Store
 Thumbs.db
+
+# Temporary documentation files
+PHASE*_PR.md
