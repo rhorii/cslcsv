@@ -1,8 +1,12 @@
 CXX       = g++
-CXXFLAGS  = -O2 -Wall
+CXXFLAGS  = -O2 -Wall -fPIC
 AR        = ar
 ARFLAGS   = rv
 RANLIB    = ranlib
+
+# CppUnit (override via environment variables if needed)
+CPPUNIT_CFLAGS ?=
+CPPUNIT_LIBS   ?= -lcppunit
 
 INCDIR    = include
 SRCDIR    = src
@@ -17,7 +21,7 @@ SRCS      = Config.cpp \
 OBJS      = $(SRCS:.cpp=.o)
 
 TESTDIR   = test
-TESTFLAGS = -Bstatic -lcppunit
+TESTFLAGS = $(CPPUNIT_CFLAGS) $(CPPUNIT_LIBS)
 TESTSRCS  = Test.cpp \
             ConfigTest.cpp \
             ReaderTest.cpp \
@@ -26,6 +30,7 @@ TESTSRCS  = Test.cpp \
 TESTOBJS  = $(TESTSRCS:.cpp=.o)
 
 .PHONY: all \
+        init \
         libcslcsv.a \
         libcslcsv.so \
         clean \
@@ -34,7 +39,10 @@ TESTOBJS  = $(TESTSRCS:.cpp=.o)
         $(LIBDIR)/libcslcsv.so \
         $(OBJDIR)/%.o
 
-all: libcslcsv.a libcslcsv.so
+all: init libcslcsv.a libcslcsv.so
+
+init:
+	mkdir -p $(LIBDIR) $(BINDIR) $(OBJDIR)
 
 libcslcsv.a: $(patsubst %, $(OBJDIR)/%, $(OBJS))
 	$(AR) $(ARFLAGS) $(LIBDIR)/$@ $^
@@ -47,7 +55,7 @@ clean:
 	rm -f $(LIBDIR)/* $(BINDIR)/* $(OBJDIR)/*
 
 test: $(patsubst %, $(OBJDIR)/%, $(TESTOBJS)) $(LIBDIR)/libcslcsv.a
-	$(CXX) $(CXXFLAGS) $(TESTFLAGS) -I$(INCDIR) $^ -o $(BINDIR)/$@
+	$(CXX) $(CXXFLAGS) -I$(INCDIR) $^ $(TESTFLAGS) -o $(BINDIR)/$@
 	./$(BINDIR)/$@
 	rm -f ./$(BINDIR)/$@
 
@@ -59,5 +67,5 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -I$(INCDIR) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(TESTDIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -I$(INCDIR) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) -I$(INCDIR) $(CPPUNIT_CFLAGS) -o $@ -c $<
 

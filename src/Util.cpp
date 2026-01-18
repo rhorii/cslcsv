@@ -4,6 +4,7 @@
  */
 #include "csl/csv/Util.hpp"
 #include <fstream>
+#include <sys/stat.h>
 #include "csl/csv/Reader.hpp"
 #include "csl/csv/Writer.hpp"
 
@@ -68,9 +69,25 @@ void Util::load(const std::string& filepath,
 		const Config& config,
 		std::vector<std::vector<std::string> >& csv)
 {
+  struct stat st;
+  if (stat(filepath.c_str(), &st) != 0 || !S_ISREG(st.st_mode)) {
+    throw std::ios_base::failure("Failed to open file for reading: " + filepath);
+  }
+
   std::ifstream stream(filepath.c_str(), std::ifstream::binary);
 
-  load(stream, config, csv);
+  if (!stream.is_open()) {
+    throw std::ios_base::failure("Failed to open file for reading: " + filepath);
+  }
+
+  try {
+    load(stream, config, csv);
+  } catch (...) {
+    stream.close();
+    throw;
+  }
+
+  stream.close();
 }
 
 /**
@@ -80,7 +97,7 @@ void Util::load(const std::string& filepath,
  * @exception std::ios_base::failure 出力ストリームにエラーが発生した場合
  */
 void Util::save(std::ostream& stream,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   save(stream, DEFAULT_CONFIG, csv);
 }
@@ -94,11 +111,11 @@ void Util::save(std::ostream& stream,
  */
 void Util::save(std::ostream& stream,
 		const Config& config,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   Writer writer(stream, config);
 
-  typedef std::vector<std::vector<std::string> >::iterator iterator;
+  typedef std::vector<std::vector<std::string> >::const_iterator iterator;
   for (iterator i = csv.begin(); i != csv.end(); i++) {
     writer.write(*i);
   }
@@ -111,7 +128,7 @@ void Util::save(std::ostream& stream,
  * @exception std::ios_base::failure 出力ストリームにエラーが発生した場合
  */
 void Util::save(const std::string& filepath,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   save(filepath, DEFAULT_CONFIG, csv);
 }
@@ -125,11 +142,22 @@ void Util::save(const std::string& filepath,
  */
 void Util::save(const std::string& filepath,
 		const Config& config,
-		std::vector<std::vector<std::string> >& csv)
+		const std::vector<std::vector<std::string> >& csv)
 {
   std::ofstream stream(filepath.c_str(), std::ofstream::binary);
 
-  save(stream, config, csv);
+  if (!stream.is_open()) {
+    throw std::ios_base::failure("Failed to open file for writing: " + filepath);
+  }
+
+  try {
+    save(stream, config, csv);
+  } catch (...) {
+    stream.close();
+    throw;
+  }
+
+  stream.close();
 }
 
 } // namespace csv
