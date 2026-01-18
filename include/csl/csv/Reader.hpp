@@ -33,6 +33,7 @@ private:
   std::istream& stream;
   const Config& config;
   char nextChar;
+  size_t recordCount;
 
 private:
   void readNextChar(void);

@@ -14,6 +14,7 @@ namespace csv {
 Reader::Reader(std::istream& stream)
   : stream(stream)
   , config(DEFAULT_CONFIG)
+  , recordCount(0)
 {
   readNextChar();
 }
@@ -26,6 +27,7 @@ Reader::Reader(std::istream& stream)
 Reader::Reader(std::istream& stream, const Config& config)
   : stream(stream)
   , config(config)
+  , recordCount(0)
 {
   readNextChar();
 }
@@ -148,6 +150,8 @@ void Reader::read(std::vector<std::string>& record)
   if (field.size() > 0) {
     record.push_back(field);
   }
+
+  recordCount++;
 }
 
 /**
