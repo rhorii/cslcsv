@@ -36,6 +36,31 @@ Writer::~Writer(void)
 }
 
 /**
+ * @brief フィールド内の引用符をエスケープします。
+ * @param field エスケープ対象のフィールド
+ * @return エスケープされたフィールド
+ */
+std::string Writer::escapeField(const std::string& field) const
+{
+  if (!config.getQuoteEnabled()) {
+    return field;
+  }
+
+  const char quoteMark = config.getQuoteMark();
+  std::string escaped;
+  escaped.reserve(field.size() + 10); // 余裕を持ってreserve
+
+  for (size_t i = 0; i < field.size(); i++) {
+    if (field[i] == quoteMark) {
+      escaped.push_back(quoteMark); // エスケープ用の追加引用符
+    }
+    escaped.push_back(field[i]);
+  }
+
+  return escaped;
+}
+
+/**
  * @brief 出力ストリームにCSVレコードを書き込みます。
  * @param record CSVレコード
  * @exception std::ios_base::failure 出力ストリームにエラーが発生した場合
@@ -48,7 +73,8 @@ void Writer::write(const std::vector<std::string>& record)
     }
 
     if (config.getQuoteEnabled()) {
-      stream << config.getQuoteMark() << record[i] << config.getQuoteMark();
+      std::string escapedField = escapeField(record[i]);
+      stream << config.getQuoteMark() << escapedField << config.getQuoteMark();
     } else {
       stream << record[i];
     }

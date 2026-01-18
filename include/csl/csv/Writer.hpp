@@ -31,7 +31,10 @@ public:
 private:
   std::ostream& stream;
   const Config& config;
-  
+
+private:
+  std::string escapeField(const std::string& field) const;
+
 private:
   Writer(const Writer& writer);
   Writer& operator=(const Writer& writer);
