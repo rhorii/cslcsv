@@ -3,6 +3,7 @@
  * @brief Writerクラス実装ファイル
  */
 #include "csl/csv/Writer.hpp"
+#include <sstream>
 
 namespace csl {
 namespace csv {
@@ -83,7 +84,14 @@ void Writer::write(const std::vector<std::string>& record)
   stream << "\r\n";
   
   if (stream.fail() || stream.bad()) {
-    throw std::ios_base::failure("Failed to write.");
+    std::ostringstream msg;
+    msg << "Failed to write";
+    if (stream.bad()) {
+      msg << ": stream in bad state";
+    } else if (stream.fail()) {
+      msg << ": stream write failure";
+    }
+    throw std::ios_base::failure(msg.str());
   }
 }
 

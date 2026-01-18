@@ -3,6 +3,7 @@
  * @brief Readerクラス実装ファイル
  */
 #include "csl/csv/Reader.hpp"
+#include <sstream>
 
 namespace csl {
 namespace csv {
@@ -70,7 +71,14 @@ void Reader::read(std::vector<std::string>& record)
   
   while (hasNext()) {
     if (stream.fail() || stream.bad()) {
-      throw std::ios_base::failure("Failed to read.");
+      std::ostringstream msg;
+      msg << "Failed to read at record " << recordCount;
+      if (stream.bad()) {
+        msg << ": stream in bad state";
+      } else if (stream.fail()) {
+        msg << ": stream read failure";
+      }
+      throw std::ios_base::failure(msg.str());
     }
 
     if (firstCharFlag) {
