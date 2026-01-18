@@ -47,6 +47,9 @@ Reader::~Reader(void)
  */
 bool Reader::hasNext(void)
 {
+  if (stream.bad()) {
+    throw std::ios_base::failure("Stream is in bad state");
+  }
   return !stream.eof();
 }
 
