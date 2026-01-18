@@ -4,6 +4,7 @@
  */
 #include "csl/csv/Reader.hpp"
 #include <sstream>
+#include <stdexcept>
 
 namespace csl {
 namespace csv {
@@ -149,6 +150,13 @@ void Reader::read(std::vector<std::string>& record)
     }
 
     readNextChar();
+  }
+
+  // レコード終了時の状態チェック
+  if (state == STATE_QUOTE) {
+    std::ostringstream msg;
+    msg << "Unmatched quote in record " << recordCount;
+    throw std::runtime_error(msg.str());
   }
 
   if (state == STATE_AFTER_CR) {
