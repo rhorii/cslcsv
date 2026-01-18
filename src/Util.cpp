@@ -4,6 +4,7 @@
  */
 #include "csl/csv/Util.hpp"
 #include <fstream>
+#include <sys/stat.h>
 #include "csl/csv/Reader.hpp"
 #include "csl/csv/Writer.hpp"
 
@@ -68,6 +69,11 @@ void Util::load(const std::string& filepath,
 		const Config& config,
 		std::vector<std::vector<std::string> >& csv)
 {
+  struct stat st;
+  if (stat(filepath.c_str(), &st) != 0 || !S_ISREG(st.st_mode)) {
+    throw std::ios_base::failure("Failed to open file for reading: " + filepath);
+  }
+
   std::ifstream stream(filepath.c_str(), std::ifstream::binary);
 
   if (!stream.is_open()) {
