@@ -4,6 +4,10 @@ AR        = ar
 ARFLAGS   = rv
 RANLIB    = ranlib
 
+# CppUnit (override via environment variables if needed)
+CPPUNIT_CFLAGS ?=
+CPPUNIT_LIBS   ?= -lcppunit
+
 INCDIR    = include
 SRCDIR    = src
 LIBDIR    = lib
@@ -17,7 +21,7 @@ SRCS      = Config.cpp \
 OBJS      = $(SRCS:.cpp=.o)
 
 TESTDIR   = test
-TESTFLAGS = -Bstatic -lcppunit
+TESTFLAGS = $(CPPUNIT_CFLAGS) $(CPPUNIT_LIBS)
 TESTSRCS  = Test.cpp \
             ConfigTest.cpp \
             ReaderTest.cpp \
@@ -63,5 +67,5 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -I$(INCDIR) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(TESTDIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -I$(INCDIR) -o $@ -c $<
+	$(CXX) $(CXXFLAGS) -I$(INCDIR) $(CPPUNIT_CFLAGS) -o $@ -c $<
 
