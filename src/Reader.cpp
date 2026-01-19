@@ -97,6 +97,12 @@ void Reader::read(std::vector<std::string>& record)
 
     if (state == STATE_NORMAL) {
       if (nextChar == config.getDelimitMark()) {
+	if (config.getMaxRecordSize() > 0 && record.size() >= config.getMaxRecordSize()) {
+	  std::ostringstream msg;
+	  msg << "Record size exceeds limit (" << config.getMaxRecordSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	record.push_back(field);
 	field.clear();
 	state = STATE_NORMAL;
@@ -105,16 +111,40 @@ void Reader::read(std::vector<std::string>& record)
       } else if (config.getQuoteEnabled() && nextChar == config.getQuoteMark()) {
 	state = STATE_QUOTE;
       } else {
+	if (config.getMaxFieldSize() > 0 && field.size() >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back(nextChar);
 	state = STATE_NORMAL;
       }
     } else if (state == STATE_AFTER_CR) {
       if (nextChar == config.getDelimitMark()) {
+	if (config.getMaxFieldSize() > 0 && field.size() >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back('\r');
+	if (config.getMaxRecordSize() > 0 && record.size() >= config.getMaxRecordSize()) {
+	  std::ostringstream msg;
+	  msg << "Record size exceeds limit (" << config.getMaxRecordSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	record.push_back(field);
 	field.clear();
 	state = STATE_NORMAL;
       } else if (nextChar == '\r') {
+	if (config.getMaxFieldSize() > 0 && field.size() >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back('\r');
 	state = STATE_AFTER_CR;
       } else if (nextChar == '\n') {
@@ -122,9 +152,21 @@ void Reader::read(std::vector<std::string>& record)
 	readNextChar();
 	break; // end of record
       } else if (config.getQuoteEnabled() && nextChar == config.getQuoteMark()) {
+	if (config.getMaxFieldSize() > 0 && field.size() >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back('\r');
 	state = STATE_QUOTE;
       } else {
+	if (config.getMaxFieldSize() > 0 && field.size() + 1 >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back('\r');
 	field.push_back(nextChar);
 	state = STATE_NORMAL;
@@ -133,20 +175,44 @@ void Reader::read(std::vector<std::string>& record)
       if (config.getQuoteEnabled() && nextChar == config.getQuoteMark()) {
 	state = STATE_ESCAPE;
       } else {
+	if (config.getMaxFieldSize() > 0 && field.size() >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back(nextChar);
 	state = STATE_QUOTE;
       }
     } else if (state == STATE_ESCAPE) {
       if (nextChar == config.getDelimitMark()) {
+	if (config.getMaxRecordSize() > 0 && record.size() >= config.getMaxRecordSize()) {
+	  std::ostringstream msg;
+	  msg << "Record size exceeds limit (" << config.getMaxRecordSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	record.push_back(field);
 	field.clear();
 	state = STATE_NORMAL;
       } else if (nextChar == '\r') {
 	state = STATE_AFTER_CR;
       } else if (config.getQuoteEnabled() && nextChar == config.getQuoteMark()) {
+	if (config.getMaxFieldSize() > 0 && field.size() >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back(nextChar);
 	state = STATE_QUOTE;
       } else {
+	if (config.getMaxFieldSize() > 0 && field.size() >= config.getMaxFieldSize()) {
+	  std::ostringstream msg;
+	  msg << "Field size exceeds limit (" << config.getMaxFieldSize()
+	      << ") at record " << recordCount;
+	  throw std::length_error(msg.str());
+	}
 	field.push_back(nextChar);
 	state = STATE_NORMAL;
       }

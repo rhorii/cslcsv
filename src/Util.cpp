@@ -4,6 +4,7 @@
  */
 #include "csl/csv/Util.hpp"
 #include <fstream>
+#include <stdexcept>
 #include <sys/stat.h>
 #include "csl/csv/Reader.hpp"
 #include "csl/csv/Writer.hpp"
@@ -40,6 +41,9 @@ void Util::load(std::istream& stream,
   std::vector<std::string> record;
 
   while (reader.hasNext()) {
+    if (config.getMaxRecords() > 0 && csv.size() >= config.getMaxRecords()) {
+      throw std::length_error("CSV record count exceeds limit");
+    }
     reader.read(record);
     csv.push_back(record);
     record.clear();
