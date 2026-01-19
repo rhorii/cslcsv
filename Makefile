@@ -26,7 +26,8 @@ TESTSRCS  = Test.cpp \
             ConfigTest.cpp \
             ReaderTest.cpp \
             WriterTest.cpp \
-            UtilTest.cpp
+            UtilTest.cpp \
+            LimitsTest.cpp
 TESTOBJS  = $(TESTSRCS:.cpp=.o)
 
 .PHONY: all \

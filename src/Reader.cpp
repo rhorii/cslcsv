@@ -233,6 +233,12 @@ void Reader::read(std::vector<std::string>& record)
   }
 
   if (field.size() > 0) {
+    if (config.getMaxRecordSize() > 0 && record.size() >= config.getMaxRecordSize()) {
+      std::ostringstream msg;
+      msg << "Record size exceeds limit (" << config.getMaxRecordSize()
+          << ") at record " << recordCount;
+      throw std::length_error(msg.str());
+    }
     record.push_back(field);
   }
 
