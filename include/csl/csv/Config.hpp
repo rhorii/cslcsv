@@ -5,6 +5,8 @@
 #ifndef CSL_CSV_CONFIG_HPP_
 #define CSL_CSV_CONFIG_HPP_
 
+#include <cstddef>
+
 namespace csl {
 namespace csv {
 
@@ -36,7 +38,13 @@ public:
   void setCommentEnabled(const bool commentEnabled);
   char getCommentMark(void) const;
   void setCommentMark(const char commentMark);
-      
+  size_t getMaxFieldSize(void) const;
+  void setMaxFieldSize(size_t size);
+  size_t getMaxRecordSize(void) const;
+  void setMaxRecordSize(size_t size);
+  size_t getMaxRecords(void) const;
+  void setMaxRecords(size_t count);
+
 private:
   void validate(void) const;
       
@@ -46,7 +54,10 @@ private:
   char quoteMark;
   bool commentEnabled;
   char commentMark;
-  
+  size_t maxFieldSize;   // 0 = unlimited
+  size_t maxRecordSize;  // 0 = unlimited
+  size_t maxRecords;     // 0 = unlimited
+
 private:
   Config(const Config& config);
   Config& operator=(const Config& config);
